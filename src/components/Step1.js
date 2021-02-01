@@ -7,8 +7,7 @@ import { updatePage1, updateProgress } from "../rootSlice";
 import {Result} from "./Result"
 import {Header} from "./Header"
 
-import Jumbotron from 'react-bootstrap/Jumbotron';
-import Container from 'react-bootstrap/Container';
+import {Jumbotron,Container,FormControl,InputGroup, FormLabel} from 'react-bootstrap';
 
 
 export const Step1 = () => {
@@ -36,39 +35,59 @@ export const Step1 = () => {
                     <div>
                         <label htmlFor="page1">Page 1 Details:</label>
                         <br />
-                        <label htmlFor="project_name">Project Name:</label> 
-                        <input type="text" name="project_name" id="project_name" 
-                            ref={
-                                register({
-                                        required: "Project Name Required", 
-                                })
-                            }
-                        />
-                        {errors.project_name && <p>{errors.project_name.message}</p>}
+                        
+                        <InputGroup className="p-3">
+                            <InputGroup.Prepend>
+                              <InputGroup.Text id="inputGroup-sizing-default">Project Name</InputGroup.Text>
+                            </InputGroup.Prepend>
+                            <FormControl
+                                type="text"
+                                name="project_name" id="project_name" 
+                                placeholder="Enter Project Name"
+                                ref={
+                                    register({
+                                            required: "Project Name Required", 
+                                    })
+                                }
+                            />
+                        </InputGroup>
+                        {errors.project_name && <p style={{color: "red"}}>{errors.project_name.message}</p>}
 
-                        <br />
-                        <label htmlFor="project_name">Site Address:</label> 
-                        <input type="text" name="site_address" id="site_address" 
-                            ref={
-                                register({
+                        <InputGroup className="p-3">
+                            <InputGroup.Prepend>
+                              <InputGroup.Text id="inputGroup-sizing-default">Site Address</InputGroup.Text>
+                            </InputGroup.Prepend>
+                            <FormControl
+                                type="text"
+                                name="site_address" id="site_address" 
+                                placeholder="Enter Site Address"
+                                ref={
+                                    register({
                                         required: "Site Address Required", 
                                         minLength: {value: 5, message: "Site Address Too short"} 
-                                })
-                            }
-                        />
-                        {errors.site_address && <p>{errors.site_address.message}</p>}
+                                    })
+                                }
+                            />
+                        </InputGroup>
+                        {errors.site_address && <p style={{color: "red"}}>{errors.site_address.message}</p>}
 
-                        <br />
-                        <label htmlFor="project_name">User Details:</label> 
-                        <input type="text" name="user_details" id="user_details" 
-                            ref={
-                                register({
+                        <InputGroup className="p-3">
+                            <InputGroup.Prepend>
+                              <InputGroup.Text id="inputGroup-sizing-default">User Details</InputGroup.Text>
+                            </InputGroup.Prepend>
+                            <FormControl
+                                type="text"
+                                name="user_details" id="user_details" 
+                                placeholder="Enter User Details (like Name)"
+                                ref={
+                                    register({
                                         required: "User Details Required", 
                                         minLength: {value: 1, message: "User Details Too short"} 
-                                })
-                            }
-                        />
-                        {errors.user_details && <p>{errors.user_details.message}</p>}
+                                    })
+                                }
+                            />
+                        </InputGroup>
+                        {errors.user_details && <p style={{color: "red"}}>{errors.user_details.message}</p>}
                         
                         <br /><br />
 
