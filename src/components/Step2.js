@@ -1,0 +1,125 @@
+import React from "react";
+
+import {useForm} from "react-hook-form";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
+import { updatePage2, updateFormProgress } from "../rootSlice";
+import {Result} from "./Result"
+import {Header} from "./Header"
+
+import {Jumbotron,Container,InputGroup, Form, FormLabel} from 'react-bootstrap';
+
+
+export const Step2 = () => {
+
+    const dispatch = useDispatch()
+    const history = useHistory()
+    const project_name = useSelector(state => state.project_name)
+    const {register, handleSubmit, errors} = useForm({defaultValues: {project_name}});
+
+    const onSubmit = (data) => {
+        
+        dispatch(
+            updatePage2({
+              ...data,
+            })
+          );
+        dispatch(updateFormProgress(50));
+        history.push("./result")
+    }
+
+    const goBack = () => {
+        dispatch(updateFormProgress(0));
+        history.push("./");
+      };
+
+    return (
+        <Container className="p-3">
+            <Jumbotron>
+                <Header />
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <div>
+                        <label htmlFor="page1">Page 2 Details:</label>
+                        <br />
+                        
+                        
+
+                        <InputGroup className="p-3">
+                            <Form.Group controlId="formBasicCheckbox">
+                            <FormLabel>Funding Sources</FormLabel>
+                                <Form.Check type="checkbox" label="VC Funded" 
+                                name="vc_funded" id="vc_funded" 
+                                ref={register}
+                                />
+                                <Form.Check type="checkbox" label="Crowdfunded" 
+                                name="crowdfunded" id="crowdfunded" 
+                                ref={register}
+                                />
+                            </Form.Group>
+                        </InputGroup> 
+
+                        <InputGroup className="p-3">
+                            <Form.Group controlId="formBasicCheckbox">
+                            <FormLabel>Project Type - Physical / Virtual?</FormLabel>
+                                <Form.Check type="checkbox" label="Physical Project" 
+                                name="physical" id="physical" 
+                                ref={register}
+                                />
+                                <Form.Check type="checkbox" label="Virtual Project" 
+                                name="virtual" id="virtual" 
+                                ref={register}
+                                />
+                            </Form.Group>
+                        </InputGroup> 
+
+                        <FormLabel>Project Progress</FormLabel>
+                        <Form.Group controlId="formBasicRange">
+                            <Form.Control name="project_progress" id="project_progress"  type="range" ref={register} />
+                        </Form.Group>
+
+                        {/* was trying to do radio type but wasn't able to get the data satisfactorily */}
+                        {/* <InputGroup className="p-3">
+                            <fieldset>
+                            <Form.Group as={Row} 
+                            <Form.Label as="legend" column sm={2} >
+                                Radios
+                            </Form.Label>
+                            <Col sm={10}>
+                                <Form.Check
+                                type="radio"
+                                label="first radio"
+                                name="one"
+                                id="formHorizontalRadios1"
+                                ref={register}>
+                                />
+                                <Form.Check
+                                type="radio"
+                                label="second radio"
+                                name="two"
+                                id="formHorizontalRadios2"
+                                ref={register}>
+                                />
+                                <Form.Check
+                                type="radio"
+                                label="third radio"
+                                name="three"
+                                id="formHorizontalRadios3"
+                                ref={register}>
+                                />
+                            </Col>
+                            </Form.Group>
+                            </fieldset>
+                        </InputGroup>  */}
+                        
+
+                        <button onClick={goBack}>Previous</button>
+                        <button type="submit">Next</button>
+                        </div>
+                </form>
+            </Jumbotron>
+            <Result />
+        </Container>
+    )
+}
+
+export default Step2;

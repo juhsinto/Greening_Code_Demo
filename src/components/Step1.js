@@ -3,7 +3,7 @@ import React from "react";
 import {useForm} from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { updatePage1, updateProgress } from "../rootSlice";
+import { updatePage1, updateFormProgress } from "../rootSlice";
 import {Result} from "./Result"
 import {Header} from "./Header"
 
@@ -23,8 +23,8 @@ export const Step1 = () => {
               ...data,
             })
           );
-        dispatch(updateProgress(25));
-        history.push("./result")
+        dispatch(updateFormProgress(25));
+        history.push("./step2")
     }
 
     return (
@@ -91,7 +91,7 @@ export const Step1 = () => {
                         
                         <br /><br />
 
-                        <button type="submit"> Next</button>
+                        <button type="submit">Next</button>
                         </div>
                 </form>
             </Jumbotron>
