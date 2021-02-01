@@ -9,6 +9,9 @@ const rootSlice = createSlice({
         page2: {
             
         },
+        page3: {
+            
+        },
         formProgress: 0,
 	}, 
 	reducers: {
@@ -18,6 +21,9 @@ const rootSlice = createSlice({
         updatePage2: (state, action) => { 
             state.page2 = { ...action.payload };
         },
+        updatePage3: (state, action) => { 
+            state.page3 = { ...action.payload };
+        },
         updateFormProgress: (state, action) => {
             state.formProgress = action.payload;
         }
@@ -26,5 +32,5 @@ const rootSlice = createSlice({
 
 export const reducer = rootSlice.reducer;
 
-export const { updatePage1, updatePage2, updateFormProgress } = rootSlice.actions
+export const { updatePage1, updatePage2, updatePage3, updateFormProgress } = rootSlice.actions
 

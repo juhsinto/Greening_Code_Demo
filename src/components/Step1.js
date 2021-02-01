@@ -10,6 +10,7 @@ import {Header} from "./Header"
 import {Jumbotron,Container,FormControl,InputGroup, FormLabel} from 'react-bootstrap';
 
 
+
 export const Step1 = () => {
     const dispatch = useDispatch()
     const history = useHistory()
@@ -26,6 +27,8 @@ export const Step1 = () => {
         dispatch(updateFormProgress(25));
         history.push("./step2")
     }
+
+    
 
     return (
         <Container className="p-3">

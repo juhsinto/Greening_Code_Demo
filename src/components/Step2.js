@@ -25,13 +25,13 @@ export const Step2 = () => {
             })
           );
         dispatch(updateFormProgress(50));
-        history.push("./result")
+        history.push("./step3")
     }
 
     const goBack = () => {
         dispatch(updateFormProgress(0));
         history.push("./");
-      };
+    };
 
     return (
         <Container className="p-3">
@@ -45,35 +45,35 @@ export const Step2 = () => {
                         
 
                         <InputGroup className="p-3">
-                            <Form.Group controlId="formBasicCheckbox">
+                            <Form.Group>
                             <FormLabel>Funding Sources</FormLabel>
                                 <Form.Check type="checkbox" label="VC Funded" 
                                 name="vc_funded" id="vc_funded" 
                                 ref={register}
                                 />
-                                <Form.Check type="checkbox" label="Crowdfunded" 
-                                name="crowdfunded" id="crowdfunded" 
+                                <Form.Check type="checkbox" label="Investment Available" 
+                                name="investment" id="investment" 
                                 ref={register}
                                 />
                             </Form.Group>
                         </InputGroup> 
 
                         <InputGroup className="p-3">
-                            <Form.Group controlId="formBasicCheckbox">
-                            <FormLabel>Project Type - Physical / Virtual?</FormLabel>
+                            <Form.Group>
+                            <FormLabel>Project Type</FormLabel>
                                 <Form.Check type="checkbox" label="Physical Project" 
                                 name="physical" id="physical" 
                                 ref={register}
                                 />
-                                <Form.Check type="checkbox" label="Virtual Project" 
-                                name="virtual" id="virtual" 
+                                <Form.Check type="checkbox" label="Construction Project" 
+                                name="construction" id="construction" 
                                 ref={register}
                                 />
                             </Form.Group>
                         </InputGroup> 
 
                         <FormLabel>Project Progress</FormLabel>
-                        <Form.Group controlId="formBasicRange">
+                        <Form.Group>
                             <Form.Control name="project_progress" id="project_progress"  type="range" ref={register} />
                         </Form.Group>
 
