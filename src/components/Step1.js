@@ -58,7 +58,7 @@ export const Step1 = () => {
                                 }
                             />
                         </InputGroup>
-                        {errors.project_name && <p class="project_name" style={{color: "red"}}>{errors.project_name.message}</p>}
+                        {errors.project_name && <p className="project_name" style={{color: "red"}}>{errors.project_name.message}</p>}
 
                         <InputGroup className="p-3">
                             <InputGroup.Prepend>
@@ -76,7 +76,7 @@ export const Step1 = () => {
                                 }
                             />
                         </InputGroup>
-                        {errors.site_address && <p class="site_address" style={{color: "red"}}>{errors.site_address.message}</p>}
+                        {errors.site_address && <p className="site_address" style={{color: "red"}}>{errors.site_address.message}</p>}
 
                         <InputGroup className="p-3">
                             <InputGroup.Prepend>
@@ -94,7 +94,7 @@ export const Step1 = () => {
                                 }
                             />
                         </InputGroup>
-                        {errors.user_details && <p class="user_details" style={{color: "red"}}>{errors.user_details.message}</p>}
+                        {errors.user_details && <p className="user_details" style={{color: "red"}}>{errors.user_details.message}</p>}
                         
                         <br /><br />
 
