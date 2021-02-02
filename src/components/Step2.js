@@ -33,12 +33,11 @@ export const Step2 = () => {
               ...data,
             })
           );
-        dispatch(updateFormProgress(50));
+        dispatch(updateFormProgress(75));
         history.push("./step3")
     }
 
     const goBack = () => {
-        dispatch(updateFormProgress(0));
         history.push("./");
     };
 

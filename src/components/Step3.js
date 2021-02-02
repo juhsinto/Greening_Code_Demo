@@ -32,7 +32,6 @@ export const Step3 = () => {
     }
 
     const goBack = () => {
-        dispatch(updateFormProgress(0));
         history.push("./step2");
     };
 

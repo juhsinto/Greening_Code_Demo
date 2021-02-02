@@ -3,9 +3,11 @@
 ## Use Redux ToolKit, React Hook Forms, and React-Bootstrap
 
 ## Packages to use
-- react-hook-form react-redux react-router-dom @reduxjs/toolkit react-bootstrap bootstrap 
+
+- react-hook-form react-redux react-router-dom @reduxjs/toolkit react-bootstrap bootstrap
 
 ## Brief
+
 <pre>
 Create a simple form wizard with relevant navigation buttons (Next, Previous).
 
@@ -31,3 +33,15 @@ Under each page, show the payload json being populated on every step.
 - Add validations where applicable
 - Add test cases where possible
 </pre>
+
+## Brief Response
+
+- Have deployed the build version at https://jacintomendes.com/apps/greening-demo/
+- End to End testing (via cypress) video output can be seen here - https://youtu.be/iDyFn1ykxUY
+
+## Installation
+
+- `git clone https://github.com/juhsinto/Greening_Code_Demo.git`
+- Install dependencies `npm install`
+- To run snapshot tests `npm run test`
+- To run E2E tests `npm run e2e` - Note: You need to have the app running on localhost:3000 (`npm start`)
