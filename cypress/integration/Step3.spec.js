@@ -1,4 +1,4 @@
-describe("Step2", () => {
+describe("Step3", () => {
 
     it("Page1 - Filling all values", () => {
         cy.visit("/");
@@ -25,44 +25,8 @@ describe("Step2", () => {
             .click()
     });
 
-    it("Navigate back", () => {
-        
-        cy.get("form");
-
-        cy.get('button').contains('Previous')
-            .click()
-
-        cy.get('label').contains("Page 1")
-            .should("have.text", "Page 1 Details:");
-    });
-
-    it("Navigate back again", () => {
-        
-        cy.get("form");
-
-        cy.get('button').contains('Previous')
-            .should("not.exist");
-    });
-
-    it("Should have values entered previously", () =>  {
-        cy.get('input[name="project_name"]')
-            .should("have.value", "Test Project");
-
-        cy.get('input[name="site_address"]')            
-            .should("have.value", "15 Queens Rd");
-
-        cy.get('input[name="user_details"]')
-            .should("have.value", "Jacinto Mendes");
-
-        cy.get('[aria-valuenow]')
-            .should("have.attr", "aria-valuenow", "25");
-    });
-
     it("Page2 - Filling all values", () => {
         
-        cy.get('button[type="submit"]')
-            .click()
-
         cy.get('#vc_funded')
             .click()
 
@@ -82,4 +46,19 @@ describe("Step2", () => {
         cy.get('button[type="submit"]')
             .click()
     });
+
+    it("Page3 - Filling all values", () => {
+        
+        cy.get('textarea[name="project_information"]')
+            .type("Some random project information")
+            .should("have.value", "Some random project information")
+
+        cy.get('textarea[name="project_comments"]')
+            .type("Some random project comments")
+            .should("have.value", "Some random project comments")
+            
+        cy.get('button[type="submit"]')
+            .click()
+    });
+    
 });
