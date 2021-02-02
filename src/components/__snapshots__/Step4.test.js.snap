@@ -51,6 +51,15 @@ exports[`renders Step4 correctly 1`] = `
     >
       Start Over
     </a>
+    <br />
+    <button
+      className="btn btn-danger"
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      Reset
+    </button>
   </div>
 </div>
 `;

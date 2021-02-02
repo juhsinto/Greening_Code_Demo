@@ -7,15 +7,18 @@ import { updatePage3, updateFormProgress } from "../rootSlice";
 import {Result} from "./Result"
 import {Header} from "./Header"
 
-import {Jumbotron,Container, Form} from 'react-bootstrap';
+import {Jumbotron,Container,Form,Button} from 'react-bootstrap';
 
 
 export const Step3 = () => {
 
     const dispatch = useDispatch()
     const history = useHistory()
-    const project_name = useSelector(state => state.project_name)
-    const {register, handleSubmit} = useForm({defaultValues: {project_name}});
+    const project_information = useSelector(state => state.page3.project_information)
+    const project_comments = useSelector(state => state.page3.project_comments)
+    
+    
+    const {register, handleSubmit} = useForm({defaultValues: {project_information, project_comments}});
 
     const onSubmit = (data) => {
         
@@ -50,8 +53,8 @@ export const Step3 = () => {
                             <Form.Label>Project Comments</Form.Label>
                             <Form.Control as="textarea" name="project_comments" id="project_comments"  ref={register} rows={3} />
                         </Form.Group>
-                        <button onClick={goBack}>Previous</button>
-                        <button type="submit">Next</button>
+                        <Button onClick={goBack}>Previous</Button>{' '}
+                        <Button type="submit">Next</Button>
                     </div>
                 </form>
             </Jumbotron>

@@ -7,15 +7,24 @@ import { updatePage2, updateFormProgress } from "../rootSlice";
 import {Result} from "./Result"
 import {Header} from "./Header"
 
-import {Jumbotron,Container,InputGroup, Form, FormLabel} from 'react-bootstrap';
+import {Jumbotron,Container,InputGroup, Form, FormLabel, Button} from 'react-bootstrap';
 
 
 export const Step2 = () => {
 
     const dispatch = useDispatch()
     const history = useHistory()
-    const project_name = useSelector(state => state.project_name)
-    const {register, handleSubmit} = useForm({defaultValues: {project_name}});
+    
+
+    const vc_funded = useSelector(state => state.page2.vc_funded)
+    const investment = useSelector(state => state.page2.investment)
+    
+    const physical = useSelector(state => state.page2.physical)
+    const construction = useSelector(state => state.page2.construction)
+
+    const project_progress = useSelector(state => state.page2.project_progress)
+    
+    const {register, handleSubmit} = useForm({defaultValues: {vc_funded, investment, physical, construction, project_progress}});
 
     const onSubmit = (data) => {
         
@@ -72,7 +81,7 @@ export const Step2 = () => {
                             </Form.Group>
                         </InputGroup> 
 
-                        <FormLabel>Project Progress</FormLabel>
+                        <FormLabel>Project Progress %</FormLabel>
                         <Form.Group>
                             <Form.Control name="project_progress" id="project_progress"  type="range" ref={register} />
                         </Form.Group>
@@ -112,8 +121,8 @@ export const Step2 = () => {
                         </InputGroup>  */}
                         
 
-                        <button onClick={goBack}>Previous</button>
-                        <button type="submit">Next</button>
+                        <Button onClick={goBack}>Previous</Button>{' '}
+                        <Button type="submit">Next</Button>
                         </div>
                 </form>
             </Jumbotron>

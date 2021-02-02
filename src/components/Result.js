@@ -4,9 +4,12 @@ import {useSelector} from "react-redux";
 
 import ProgressBar from "react-bootstrap/ProgressBar";
 
+
 export const Result = () => {
+    
     const state = useSelector(state => state);
     const { formProgress } = state;
+    
 
     return (
         <>

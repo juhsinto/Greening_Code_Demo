@@ -54,11 +54,17 @@ exports[`renders Step3 correctly 1`] = `
           />
         </div>
         <button
+          className="btn btn-primary"
+          disabled={false}
           onClick={[Function]}
+          type="button"
         >
           Previous
         </button>
+         
         <button
+          className="btn btn-primary"
+          disabled={false}
           type="submit"
         >
           Next

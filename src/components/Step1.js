@@ -7,15 +7,17 @@ import { updatePage1, updateFormProgress } from "../rootSlice";
 import {Result} from "./Result"
 import {Header} from "./Header"
 
-import {Jumbotron,Container,FormControl,InputGroup} from 'react-bootstrap';
+import {Jumbotron,Container,FormControl,InputGroup,Button} from 'react-bootstrap';
 
 
 
 export const Step1 = () => {
     const dispatch = useDispatch()
     const history = useHistory()
-    const project_name = useSelector(state => state.project_name)
-    const {register, handleSubmit, errors} = useForm({defaultValues: {project_name}});
+    const project_name = useSelector(state => state.page1.project_name)
+    const site_address = useSelector(state => state.page1.site_address)
+    const user_details = useSelector(state => state.page1.user_details)
+    const {register, handleSubmit, errors} = useForm({defaultValues: {project_name, site_address, user_details}});
 
     const onSubmit = (data) => {
         
@@ -27,6 +29,8 @@ export const Step1 = () => {
         dispatch(updateFormProgress(25));
         history.push("./step2")
     }
+
+    
 
     
 
@@ -94,7 +98,7 @@ export const Step1 = () => {
                         
                         <br /><br />
 
-                        <button type="submit">Next</button>
+                        <Button type="submit">Next</Button>
                         </div>
                 </form>
             </Jumbotron>

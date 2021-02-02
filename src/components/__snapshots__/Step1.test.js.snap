@@ -88,6 +88,8 @@ exports[`renders Step1 correctly 1`] = `
         <br />
         <br />
         <button
+          className="btn btn-primary"
+          disabled={false}
           type="submit"
         >
           Next
