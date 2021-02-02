@@ -105,8 +105,9 @@ describe("Step1", () => {
             .should("have.value", "Test Project");
 
         cy.get('input[name="project_name"]')
+            .clear()
             .type("Test Project")
-            .should("not.have.value", "Test");
+            .should("not.have.value", "Something Else");
 
         cy.get('input[name="site_address"]')
             .type("15 Queens Rd")
