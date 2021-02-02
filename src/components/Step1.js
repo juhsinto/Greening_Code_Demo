@@ -7,7 +7,7 @@ import { updatePage1, updateFormProgress } from "../rootSlice";
 import {Result} from "./Result"
 import {Header} from "./Header"
 
-import {Jumbotron,Container,FormControl,InputGroup, FormLabel} from 'react-bootstrap';
+import {Jumbotron,Container,FormControl,InputGroup} from 'react-bootstrap';
 
 
 

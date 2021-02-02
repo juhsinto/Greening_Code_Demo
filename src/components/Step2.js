@@ -15,7 +15,7 @@ export const Step2 = () => {
     const dispatch = useDispatch()
     const history = useHistory()
     const project_name = useSelector(state => state.project_name)
-    const {register, handleSubmit, errors} = useForm({defaultValues: {project_name}});
+    const {register, handleSubmit} = useForm({defaultValues: {project_name}});
 
     const onSubmit = (data) => {
         

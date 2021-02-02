@@ -7,7 +7,7 @@ import { updatePage3, updateFormProgress } from "../rootSlice";
 import {Result} from "./Result"
 import {Header} from "./Header"
 
-import {Jumbotron,Container,InputGroup, Form, FormLabel} from 'react-bootstrap';
+import {Jumbotron,Container, Form} from 'react-bootstrap';
 
 
 export const Step3 = () => {
@@ -15,7 +15,7 @@ export const Step3 = () => {
     const dispatch = useDispatch()
     const history = useHistory()
     const project_name = useSelector(state => state.project_name)
-    const {register, handleSubmit, errors} = useForm({defaultValues: {project_name}});
+    const {register, handleSubmit} = useForm({defaultValues: {project_name}});
 
     const onSubmit = (data) => {
         
@@ -24,7 +24,7 @@ export const Step3 = () => {
               ...data,
             })
           );
-        dispatch(updateFormProgress(75));
+        dispatch(updateFormProgress(100));
         history.push("./step4")
     }
 
