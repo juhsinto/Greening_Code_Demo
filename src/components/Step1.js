@@ -3,11 +3,12 @@ import React from "react";
 import {useForm} from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { updatePage1, updateProgress } from "../rootSlice";
+import { updatePage1, updateFormProgress } from "../rootSlice";
 import {Result} from "./Result"
 import {Header} from "./Header"
 
-import {Jumbotron,Container,FormControl,InputGroup, FormLabel} from 'react-bootstrap';
+import {Jumbotron,Container,FormControl,InputGroup} from 'react-bootstrap';
+
 
 
 export const Step1 = () => {
@@ -23,9 +24,11 @@ export const Step1 = () => {
               ...data,
             })
           );
-        dispatch(updateProgress(25));
-        history.push("./result")
+        dispatch(updateFormProgress(25));
+        history.push("./step2")
     }
+
+    
 
     return (
         <Container className="p-3">
@@ -51,7 +54,7 @@ export const Step1 = () => {
                                 }
                             />
                         </InputGroup>
-                        {errors.project_name && <p style={{color: "red"}}>{errors.project_name.message}</p>}
+                        {errors.project_name && <p class="project_name" style={{color: "red"}}>{errors.project_name.message}</p>}
 
                         <InputGroup className="p-3">
                             <InputGroup.Prepend>
@@ -69,7 +72,7 @@ export const Step1 = () => {
                                 }
                             />
                         </InputGroup>
-                        {errors.site_address && <p style={{color: "red"}}>{errors.site_address.message}</p>}
+                        {errors.site_address && <p class="site_address" style={{color: "red"}}>{errors.site_address.message}</p>}
 
                         <InputGroup className="p-3">
                             <InputGroup.Prepend>
@@ -87,11 +90,11 @@ export const Step1 = () => {
                                 }
                             />
                         </InputGroup>
-                        {errors.user_details && <p style={{color: "red"}}>{errors.user_details.message}</p>}
+                        {errors.user_details && <p class="user_details" style={{color: "red"}}>{errors.user_details.message}</p>}
                         
                         <br /><br />
 
-                        <button type="submit"> Next</button>
+                        <button type="submit">Next</button>
                         </div>
                 </form>
             </Jumbotron>

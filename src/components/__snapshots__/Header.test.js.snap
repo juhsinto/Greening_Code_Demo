@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Header correctly with custom message 1`] = `
+<h1
+  className="header"
+>
+  A test message
+</h1>
+`;
+
+exports[`renders Header correctly with default message 1`] = `
+<h1
+  className="header"
+>
+  A simple Questionnaire
+</h1>
+`;
