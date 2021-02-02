@@ -42,6 +42,6 @@ Under each page, show the payload json being populated on every step.
 ## Installation
 
 - `git clone https://github.com/juhsinto/Greening_Code_Demo.git`
-- Install dependencies `npm install`
+- Change Dir `cd Greening_Code_Demo` & Install dependencies `npm install`
 - To run snapshot tests `npm run test`
 - To run E2E tests `npm run e2e` - Note: You need to have the app running on localhost:3000 (`npm start`)
