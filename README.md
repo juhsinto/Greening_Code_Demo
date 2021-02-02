@@ -3,11 +3,9 @@
 ## Use Redux ToolKit, React Hook Forms, and React-Bootstrap
 
 ## Packages to use
-
-- react-hook-form react-redux react-router-dom @reduxjs/toolkit react-bootstrap bootstrap
+- react-hook-form react-redux react-router-dom @reduxjs/toolkit react-bootstrap bootstrap 
 
 ## Brief
-
 <pre>
 Create a simple form wizard with relevant navigation buttons (Next, Previous).
 
